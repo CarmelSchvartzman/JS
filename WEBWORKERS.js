@@ -4,7 +4,7 @@ demo_workers.js :
 
 function timedCount() {
   i = i + 1;
-  postMessage(i);
+  postMessage(i);     <<<<<<<<<<<<<<<<<<<<
   setTimeout("timedCount()",500);
 }
 
@@ -33,9 +33,9 @@ var w;
 function startWorker() {
   if(typeof(Worker) !== "undefined") {
     if(typeof(w) == "undefined") {
-      w = new Worker("demo_workers.js");
+      w = new Worker("demo_workers.js");<<<<<<<<<<<<<<<<<<<<<<<<
     }
-    w.onmessage = function(event) {
+    w.onmessage = function(event) {            <<<<<<<<<<<<<<<<<<<<<<<<<<<<
       document.getElementById("result").innerHTML = event.data;
     };
   } else {
@@ -44,7 +44,7 @@ function startWorker() {
 }
 
 function stopWorker() { 
-  w.terminate();
+  w.terminate();    <<<<<<<<<<<<<<<<<<<<<<<<
   w = undefined;
 }
 </script>
