@@ -1,4 +1,4 @@
-demo_workers.js :
+/////////  demo_workers.js :
  
  var i = 0;
 
@@ -14,7 +14,7 @@ timedCount();
  
  
  
- HTML :
+ ///////////  HTML :
  
  
  <!DOCTYPE html>
