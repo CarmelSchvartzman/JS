@@ -25,7 +25,8 @@ function cleanLocalStorage(){
 
 function fnSeeLocalStorage(){
 
-   document.querySelector('#msg').innerHTML = localStorage.jcs_count != null ? 'LocalStorage = ' + localStorage.jcs_count : 'NULL';
+   document.querySelector('#msg').innerHTML = localStorage.jcs_count != null ? 'LocalStorage = ' 
+	   + localStorage.jcs_count : 'NULL';
 }
 var i;
 var count = 0;
@@ -43,8 +44,8 @@ var fn = function fnGetData(url){
 function fnDisplayData(url){
 
 	fn(url).then(function(res){
-							document.querySelector('#msgPromise').innerHTML = '<div>Promise Resolve/Reject = '+res+'</div>';
-						 },function(err){console.log(err);});
+			document.querySelector('#msgPromise').innerHTML = '<div>Promise Resolve/Reject = '+res+'</div>';
+		},function(err){console.error(err);});
      
 	
 }
