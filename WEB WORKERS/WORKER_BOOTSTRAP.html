@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<header>
+<style>
+.centered {
+display:flex;
+justify-content:center;
+}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+var w;
+const file = "demo_workers.js";
+const url = `The Worker is located at ${file} file`;       <<<<<<<<<<<<<<<<<<<
+
+const startWorker = ()=>{
+if(typeof(Worker) !== 'undefined'){
+	if(typeof(w) === 'undefined'){ w = new  Worker(file); }      <<<<<<<<<<<<<<<<<<<
+
+w.onmessage = (d)=>{ $('#txt').val(d.data);console.warn(d.data);   };
+
+
+}
+}
+
+const stopWorker = ()=>{      <<<<<<<<<<<<<<<<<<<
+	w.terminate();      <<<<<<<<<<<<<<<<<<<
+w = undefined;      <<<<<<<<<<<<<<<<<<<
+}
+
+</script>
+</header>
+<body>
+
+<p> <output id="result"></output></p>
+
+
+
+
+
+<div class='container' >
+<div class='row well' >
+	<div class='col-md-8' ><div class='well' >Count numbers:</div></div>
+    <div class='col-md-4' >
+      <form>
+    	<div class='input-group' >
+             <span class="input-group-addon">
+                     <span class='glyphicon glyphicon-envelope' ></span>
+                  </span>
+        	
+            <input class='form-control  text-center' id='txt' name='txt' />
+            <span class="input-group-addon">
+               .00
+            </span>
+    	</div>
+      </form>
+    </div>
+
+
+</div>
+<div class='row ' >
+	<div class='col-md-6  text-center' >
+    <button class='btn btn-success' onclick="startWorker()">Start Worker</button> 
+    </div>
+    <div class='col-md-6  text-center' >
+    <button  class='btn btn-success' onclick="stopWorker()">Stop Worker</button>
+    </div>
+
+</div>
+
+
+</body>
+</html>
