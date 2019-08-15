@@ -22,8 +22,6 @@ const fnPromise = (url) => {
 </script>
 </head>
 <body>
-
 <button>Call a Promise and get the result back</button>
-
 </body>
 </html>
