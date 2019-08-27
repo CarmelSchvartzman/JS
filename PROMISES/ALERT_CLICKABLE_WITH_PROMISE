@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script>
+$(()=>{
+
+const fnPromise = (msg)=>{
+
+	return new Promise((resolve,reject)=>{
+    
+    	if(msg !== null && msg.length > 0) resolve('<strong> Success : </strong> ' + msg);
+    	else reject('Bad request');
+    });
+}
+
+	$('button').on({'click':()=>{
+    	
+        fnPromise('This alert box indicates a successful calling to a Promise method.').then((ret)=>{
+    		$('#spanMsg').html(ret);
+    	}, (error)=>{$('#spanMsg').html(error); });
+    }});
+
+});
+</script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Showing Alerts with a click</h2>
+  <p>This is an showable Alert including the call to a JavaScript Promise</p>
+  <button class='btn btn-info' data-target='#a1' data-toggle='modal'  >Open Alert</button>
+  <div class='modal' id='a1'>
+  <div class='modal-dialog'>
+  <div  class="alert alert-warning alert-dismissible"  >
+    <a href="#" class="close" data-dismiss="modal" aria-label="close"><span class='glyphicon glyphicon-check'></span></a>
+    <span id='spanMsg'></span> 
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
