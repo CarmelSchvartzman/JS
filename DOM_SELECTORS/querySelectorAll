@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    const o = document.querySelectorAll('.div');  
+    
+    for(i=0;i<o.length ;i++)
+          o[i].outerHTML= '<h2>Tag transformation using outerHTML & querySelectorAll</h2>' ;     
+        
+    const inputElem = document.querySelector('#i1').outerHTML = '<h3>Transformation of the Input Tag</h3>';
+   
+  });
+});
+</script>
+</head>
+<body>
+
+
+<div   class='div'></div> <br>
+<div  class='div'></div> <br>
+ <div  class='div'></div> <br>
+ 
+<input id="i1" />
+<br>
+<button>Transform Tags</button>
+
+</body>
+</html>
