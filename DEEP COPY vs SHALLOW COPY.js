@@ -58,13 +58,13 @@ $.extend(cloned, OldObj);
 /* example :
     let orig = {id:3,name:'dan'};
     let clone = {};
-    $.extend(true, clone,orig);      <<<<<<<<<<<<<<<<<<<<<<<<<
+    $.extend(true, clone,orig);      <<<<<<<<<<<<   " TRUE " MUST BE INCLUDED !!! SEE : https://api.jquery.com/jquery.extend/
     orig.name = 'CHANGED';
     $('p').html(JSON.stringify(clone));
 */
 
 let a = [{ x:{z:1} , y: 2}];
-let b = $.extend(true, [], a);
+let b = $.extend(true, [], a);     <<<<<<<<<<<<   " TRUE " MUST BE INCLUDED !!! SEE : https://api.jquery.com/jquery.extend/
 b[0].x.z=0
 console.log(JSON.stringify(a)); //[{"x":{"z":1},"y":2}]
 console.log(JSON.stringify(b)); // [{"x":{"z":0},"y":2}]
