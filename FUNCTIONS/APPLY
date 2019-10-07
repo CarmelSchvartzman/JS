@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+<address>Here we use JavaScript "apply" function:</address>
+<p/>
+<div id="proof"></div>
+
+<script>
+const person = {
+  firstName:"default firstName",
+  lastName: "default lastName",
+  getData : function(){            <<<<<<<<<<<<<<<<<<<<<<     getData is defined for 'person'
+    return this.firstName + " " + this.lastName;
+  }
+}
+const person0 = {
+  firstName:"Art",
+  lastName: "Doe"
+}
+const person1 = {
+  firstName:"Bart",
+  lastName: "Doe"
+}
+const person2 = {
+  firstName:"Cart",
+  lastName: "Doe"
+}
+const z = person.getData.apply(person0);       <<<<<<<<<<<APPLY<<<<<<<<<<<    now you can use getData for person0 
+const a = person.getData.apply(person1); 
+const b = person.getData.apply(person2); 
+document.querySelector("#proof").innerHTML = z + '<br>' + a + '<br>' + b; 
+</script>
+
+</body>
+</html>
+
