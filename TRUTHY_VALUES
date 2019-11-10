@@ -1,0 +1,14 @@
+////  not truthy in JavaScript   (a.k.a. falsy values):
+
+null
+undefined
+0
+"" (the empty string)
+false
+NaN
+
+/////  CHECK :
+
+if (strValue) {
+    //do something
+}
