@@ -7,8 +7,12 @@ undefined
 false
 NaN
 
-/////  CHECK :
+//////  CHECK :
 
 if (strValue) {
     //do something
 }
+
+
+
+
