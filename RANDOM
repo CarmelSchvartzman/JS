@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){ 
+
+$('#msg').on({'mouseover':function(){
+   let animals = ['🐔', '🐷', '🐑', '🐇'];
+   let names = ['Gertrude', 'Henry', 'Melvin', 'Billy Bob'];
+   let txt = '';
+   for (let animal of animals) {
+  
+      let nameIdx = Math.floor(Math.random() * names.length);
+      console.log(`${names[nameIdx]} the ${animal}`);
+      txt += `${names[nameIdx]} the ${animal}<br />`;
+  
+	}
+$('#msg').html(txt);
+}});
+  
+});
+
+
+// Henry the 🐔
+// Melvin the 🐷
+// Henry the 🐑
+// Billy Bob the 🐇
+</script>
+</head>
+<body>
+
+
+<article id='msg'>The output</article>
+</body>
+</html>
