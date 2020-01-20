@@ -1,5 +1,7 @@
+////   https://www.w3schools.com/js/js_function_closures.asp
+
 var add = (function () {
-  var counter = 0;  // PRIVATE VARIABLE
+  var counter = 0;  // PRIVATE VARIABLE : seen only from inside "ADD()"
   return function () {counter += 1; return counter}
 })();
 
