@@ -1,0 +1,26 @@
+////////  BIND :
+
+var o = {edad:45};
+
+var f = function(x){ return this.edad + x; }
+
+var bound = f.bind(o);
+console.dir(bound(10));  //  = 55
+
+////////////////////APPLY/////////////////////////////////////////
+
+var o = {edad:45};
+
+var f = function(x){ return this.edad + x; }
+
+var applied = f.apply(o, [10]);
+console.dir(applied);  //  = 55
+
+////////////////////CALL////////////////////////////////////////
+
+var o = {edad:45};
+
+var f = function(x){ return this.edad + x; }
+
+var applied = f.call(o, 10);
+console.dir(applied);  //  = 55
