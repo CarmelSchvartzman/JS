@@ -1,0 +1,22 @@
+///  REDUCE an array to a single value :
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Subtract the numbers in the array, starting from the left:</p>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [175, 50, 25, 1025];
+
+document.querySelector("#demo").innerHTML = numbers.reduce( function(previousvalue, nextvalue, index ) { 
+         return previousvalue > nextvalue ? previousvalue:nextvalue;   ///  OUTPUT = 1025
+}
+)
+</script>
+
+</body>
+</html>
