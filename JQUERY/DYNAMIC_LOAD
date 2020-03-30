@@ -1,0 +1,12 @@
+$("#addComment").click(function() {
+    if(typeof TinyMCE === "undefined") {       <<<<<<<<<<<<<<<<<<<<<<<<
+        $.ajax({
+            url: "tinymce.js",
+            dataType: "script",        <<<<<<<<<<<<<<<<<<<<<<<<
+            cache: true,              <<<<<<<<<<<<<<<<<<<<<<<<
+            success: function() {
+                TinyMCE.init();
+            }
+        });
+    }
+});
