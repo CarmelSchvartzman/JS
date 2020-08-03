@@ -1,0 +1,19 @@
+////  https://medium.com/javascript-in-plain-english/async-await-javascript-5038668ec6eb
+
+async function firstAsync() {     /////   async simply implies that a promise will be returned
+  return 27;
+}
+
+firstAsync().then(alert); // 27
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ASYNC function firstAsync() {
+  let promise = Promise.resolve(10);
+  let result = AWAIT promise;    ///  await for a Promise: It can be used inside an Async block only!!!!
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+async function sequence() {
+    await Promise.all([promise1(), promise2()]);  ////  asynchronous code
+    return "done!";
+}
